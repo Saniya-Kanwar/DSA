@@ -1,0 +1,80 @@
+Table of 2 
+
+#include <iostream>
+using namespace std;
+
+void print_table(int i){
+  if(i==22){
+    return ;
+  }
+  cout<<i<<endl;
+  print_table(i+2);
+}
+
+int main() 
+{
+    int i=2;
+    print_table(i);
+    return 0;
+}
+**********************************************************************************************************************************************************************************************************************************
+SUM OF DIGITS USING RECURSION
+
+#include <iostream>
+using namespace std;
+
+void solve(int n, int &sum)
+{
+  if(n == 0){
+    return;
+  }
+  int rem = n%10;  // gives last digit
+  sum += rem;
+  solve(n/10,sum);   //removes last digit 
+} 
+
+int main() 
+{
+    int sum = 0;
+    int n;
+    cin>>n;
+    solve(n,sum);
+    cout<<sum;
+    return 0;
+}
+******************************************************************************************************************************************************************************************************************************
+OR (gfg)
+
+class Solution {
+    
+    void solve(int n,int &sum)
+    {
+        if(n == 0)
+        {
+            return;
+        }
+        int rem = n%10;
+        sum = sum + rem;
+        solve(n/10,sum);
+    }
+  public:
+    int sumOfDigits(int n) {
+        // code here
+        int sum = 0;
+        solve(n,sum);
+        return sum;
+    }
+};
+*****************************************************************************************************************************************************************************************************************************
+FACTORIAL USING RECURSION (gng)
+
+class Solution {
+  public:
+    int factorial(int n) {
+        // code here
+        if(n<=1){
+            return 1;
+        }
+        return n * factorial(n-1);
+    }
+};
