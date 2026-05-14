@@ -94,3 +94,28 @@ int main()
     return 0;
 }
 **********************************************************************************************************************************************************************************************************************
+TO FIND MIDDLE ELEMENT
+
+class Solution {
+public:
+    ListNode* middleNode(ListNode* head) {
+        // If LL is empty or has only 1 node
+        if(head == NULL or head->next == NULL)
+        {
+            return head;
+        }
+        // If LL has only 2 nodes
+        if(head->next->next == NULL)
+        {
+            return head->next;
+        }
+       ListNode * slow = head;
+       ListNode * fast = head;
+       while(fast!=NULL && fast->next != NULL)
+       {
+        slow= slow->next;
+        fast = fast->next->next;
+       } 
+       return slow;
+    }
+};
