@@ -12,7 +12,7 @@ class Node{
     next = NULL;
   }
 };
-
+******************************************************************************
 void insertAtStart(Node * &head, Node * &tail)
 {
   if(head == NULL)
@@ -27,7 +27,7 @@ void insertAtStart(Node * &head, Node * &tail)
     head = n;
   }
 }
-
+***********************************************************************************
 void insertAtEnd(Node * &head, Node * &tail)
 {
   if(head == NULL)
@@ -42,7 +42,7 @@ void insertAtEnd(Node * &head, Node * &tail)
     tail = n;
   }
 }
-
+**************************************************************************************
 void insertion(Node * &head, int posn)
 {
   Node * temp = head;
@@ -54,7 +54,23 @@ void insertion(Node * &head, int posn)
   n->next = temp->next;
   temp->next = n;
 }
-
+****************************************************************************************
+void deleteAtFirst(Node * &head, Node * &tail){
+  Node * n = head->next;
+  delete head;
+  head = n;
+}
+***************************************************************************************
+void deleteAtEnd(Node * &head , Node * &tail){
+  Node *temp = head;
+  while(temp->next != tail){
+    temp = temp->next;
+  }
+  delete tail;
+  temp->next =NULL;
+  tail = temp;
+}
+***********************************************************************************
 void display(Node * head){
   Node * temp = head;
   while(temp!= NULL){
@@ -63,7 +79,7 @@ void display(Node * head){
   }
   cout<<"NULL";
 }
-
+*******************************************************************************************
 int main() 
 {
     Node *head;
@@ -77,3 +93,4 @@ int main()
    
     return 0;
 }
+**********************************************************************************************************************************************************************************************************************
