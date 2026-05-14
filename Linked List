@@ -40,7 +40,28 @@ void insertAtEnd(Node * &head, Node * &tail)
     Node *n =new Node(3);
     tail->next = n;
     tail = n;
-  }=
+  }
+}
+
+void insertion(Node * &head, int posn)
+{
+  Node * temp = head;
+  for(int i =1;i<posn -1;i++)
+  {
+    temp = temp->next;
+  }
+  Node * n = new Node(4);
+  n->next = temp->next;
+  temp->next = n;
+}
+
+void display(Node * head){
+  Node * temp = head;
+  while(temp!= NULL){
+    cout<<temp->data<<"->";
+    temp= temp->next;
+  }
+  cout<<"NULL";
 }
 
 int main() 
@@ -51,7 +72,8 @@ int main()
     tail = NULL;
     insertAtStart(head, tail);
     insertAtEnd(head , tail);
-    cout<< head->data <<tail->data;
+    insertion(head,2);
+    display(head);
    
     return 0;
 }
