@@ -22,16 +22,17 @@ public:
                         return false;
                     }
                 }
-                else
+                else{
                     return false;
                 }
             }
-            if(st.empty()){
-                return true;
-            }
-            else{
-                return false;
-            }
+        }
+        if(st.empty()){
+            return true;
+        }
+        else{
+            return false;
+        }
                
         
     }
